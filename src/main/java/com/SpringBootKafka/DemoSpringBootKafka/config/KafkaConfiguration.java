@@ -19,22 +19,15 @@ public class KafkaConfiguration {
 
     /**
      * Bean used to create a KafkaProducer object.
-     * @return DefaultKafkaProducerFactory onject.
+     * @return DefaultKafkaProducerFactory object.
      */
     @Bean
-    ProducerFactory<String, User> producerFactory() {
+    public ProducerFactory<String, User> producerFactory() {
 
-        /**
-         * Declare constant bootstrap server URL
-         * Use your server's IP address or hostname for connecting to custom server
-         * final String bootstrapServers = "localhost:9092";
-         */
+        // Use your server's IP address or hostname for connecting to server
         final String bootstrapServers = "127.0.0.1:9092";
 
-        /**
-         * Creates a Map of properties for the producer
-         * and populate it with the required properties
-         */
+        // Create a Map of properties for the producer and populate it with the required properties
         Map<String, Object> config = new HashMap<>();
         config.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         config.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -47,10 +40,11 @@ public class KafkaConfiguration {
     /**
      * Like we use RestTemplate for calling REST APIs,
      * we use KafkaTemplate for communicating with Kafka-Broker
+     * The producerFactory is injected to this Bean
      * @return KafkaTemplate object.
      */
     @Bean
-    KafkaTemplate<String, User> kafkaTemplate() {
-        return new KafkaTemplate<String, User>(producerFactory());
+    public KafkaTemplate<String, User> kafkaTemplate() {
+        return new KafkaTemplate<>(producerFactory());
     }
 }
