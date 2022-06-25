@@ -1,10 +1,11 @@
 # DemoSpringBootKafka
 
-A Spring Boot application that sends messages to a Kafka topic.
+* [`DemoSpringBootKafkaProducer`](./DemoSpringBootKafkaProducer/) : A Spring Boot application that publishes messages to a specific topic of a Kafka cluster.
+* [`DemoSpringBootKafkaConsumer`](./DemoSpringBootKafkaConsumer/) : A Spring Boot Application that works as a Consumer-Group to consume published messages from a Kafka cluster.
 
 
-# Kafka-Commands (Windows)
-
+## Kafka-Commands (Windows)
+---
 ### 1. Starts the zookeeper
 ```
 .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
