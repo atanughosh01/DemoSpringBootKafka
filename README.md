@@ -3,7 +3,6 @@
 * [`DemoSpringBootKafkaProducer`](./DemoSpringBootKafkaProducer/): Spring Boot app that publishes messages to a topic of a Kafka cluster.
 * [`DemoSpringBootKafkaConsumer`](./DemoSpringBootKafkaConsumer/): Spring Boot app that cosumes published messages from a Kafka cluster.
 
----
 
 ## How to start a kafka cluster (windows)
 
